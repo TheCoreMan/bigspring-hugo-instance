@@ -10,7 +10,7 @@
         <p class="mb-4">{{ .content | markdownify }}</p>
         {{ if .button.enable }}
         {{ with .button }}
-        <div><a href="{{ .link | safeURL }}" title="{{ .label }}" class="btn btn-primary">{{ .label }}</a></div>
+        <div><a href="{{ .link | safeURL }}" title="{{ .label }}" class="btn btn-primary">{{ .label }} {{ .icon | safeHTML }}</a></div>
         {{ end }}
         {{ end }}
 
@@ -60,7 +60,7 @@
         <p>{{ .content | markdownify }}</p>
         {{ if .button.enable }}
         {{ with .button }}
-        <a href="{{ .link | relURL }}" title="{{ .label }}" class="btn-link">{{ .label }} <i class="fas fa-arrow-right"></i></a>
+        <a href="{{ .link | relURL }}" title="{{ .label }}" class="btn-link">{{ .icon | safeHTML }} {{ .label }} <i class="fas fa-arrow-right"></i></a>
         {{ end }}
         {{ end }}
       </div>
@@ -90,7 +90,7 @@
         <p>{{ .content | markdownify }}</p>
         {{ if .button.enable }}
         {{ with .button }}
-        <a href="{{ .link | relURL }}" title="{{ .label }}" class="btn-link">{{ .label }} <i class="fas fa-arrow-right"></i></a>
+        <a href="{{ .link | relURL }}" title="{{ .label }}" class="btn-link">{{ .icon | safeHTML }} {{ .label }} <i class="fas fa-arrow-right"></i></a>
         {{ end }}
         {{ end }}
       </div>
@@ -134,7 +134,7 @@
         {{with .content }}<p class="mb-4">{{ . | markdownify }}</p>{{ end }}
         {{ if .button.enable }}
         {{ with .button }}
-        <a href="{{ .link | relURL }}" title="{{ .label }}" class="btn btn-primary">{{ .label }}</a>
+        <a href="{{ .link | relURL }}" title="{{ .label }}" class="btn btn-primary">{{ .label }} {{ .icon | safeHTML }}</a>
         {{ end }}
         {{ end }}
       </div>
